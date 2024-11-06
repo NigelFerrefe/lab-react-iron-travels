@@ -1,9 +1,6 @@
-.travel-container {
-    display: flex;
-    flex-direction: column;
-    width: 150px;
-}
+
 
 .travels {
     display: flex;
+    flex-direction: column;
 }

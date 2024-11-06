@@ -6,15 +6,23 @@ import '../components/TravelList.css'
 function TravelList() {
   const [travelsPlans, settravelsPlans] = useState(travelData);
 
-  return (
-    <div className="travel-container">
-    <div className="travels">
-      {travelsPlans.map((travel) => (
-        <TravelCard key={travel.id} travel={travel} />
-      ))}
-      </div>
-    </div>
-  );
-}
+  function setLabel() {
+    if (totalCost < 350) {
+      return <label className="deal-tag">Great Deal</label>
+    } else if (totalCost >= 1500) {
+        return <label className="premium-tag">Premium</label>
+      }
+    }
 
-export default TravelList;
+    return (
+      <div className="travel-container">
+      <div className="travels">
+        {travelsPlans.map((travel) => (
+          <TravelCard key={travel.id} travel={travel} />
+        ))}
+        </div>
+      </div>
+    );
+  }
+
+  export default TravelList;
